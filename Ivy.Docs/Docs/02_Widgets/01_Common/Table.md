@@ -9,39 +9,23 @@ A simple way to create a table with a type of data.
 ```csharp
 new TableBuilder<Person>(people);
 ```
-
-Here's a basic example of creating a `Table` using rows and cells:
-
-```csharp demo-below
-public class BasicTableDemo : ViewBase
+```csharp demo-tabs
+public class BasicRowTable : ViewBase
 {
     public override object? Build()
     {
-        return new Table(
-            new TableRow(
-                new TableCell("Name"),
-                new TableCell("Age")
-            ),
-            new TableRow(
-                new TableCell("Alice"),
-                new TableCell("30")
-            ),
-            new TableRow(
-                new TableCell("Bob"),
-                new TableCell("25")
-            )
-        );
+        var firstRow[] = {"Name", "Age"};
+        var secondRow[] = {"Artem", "20"};
+        
+        return new Table(new TableRow(firstRow), new TableRow(SecondRow));
     }
 }
 ```
-
-# TableRow
-
 The `TableRow` widget represents a single row within a `Table`. It contains one or more `TableCell` elements and supports features such as marking the row as a header and composable syntax with the `|` operator.
 
 Use `TableRow` to define a standard row of cells inside a `Table`.
 
-```csharp demo-below
+```csharp demo-tabs
 public class BasicRowTable : ViewBase
 {
     public override object? Build()
